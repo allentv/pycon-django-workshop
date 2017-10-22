@@ -4,7 +4,7 @@ services:
     image: redis:latest
     container_name: proj-cache
     ports:
-      - "6000:6379"
+      - "6379:6379"
   web:
     container_name: proj-application
     build:
@@ -14,6 +14,6 @@ services:
     volumes:
       - .:/usr/pycon/
     ports:
-      - "9000:8000"
+      - "8000:8000"
     depends_on:
       - redis
